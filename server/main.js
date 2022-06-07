@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
-const Names = new Mongo.Collection('test');
+const Names = new Mongo.Collection('names');
 
 Meteor.startup(() => {
   // code to run on server at startup
