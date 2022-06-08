@@ -10,7 +10,7 @@
 
 
 <div class="container">
-  <h1>CHEVAS!!!</h1>
+  <h1>SEBAS!!!</h1>
 
   <button on:click={addToCounter}>Click Me</button>
   <p>You've pressed the button {counter} times.</p>
