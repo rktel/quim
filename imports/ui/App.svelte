@@ -1,7 +1,10 @@
 <script>
+	import { Meteor } from 'meteor/meteor';
+
   let counter = 0;
   const addToCounter = () => {
     counter += 1;
+    Meteor.call('demo');
   }
 </script>
 
