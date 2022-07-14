@@ -12,7 +12,7 @@
 <div class="container">
   <h1>SEBAS!!!</h1>
 
-  <button on:click={addToCounter}>Click Me</button>
+  <button class="btn  btn-primary" on:click={addToCounter}>Click Me</button>
   <p>You've pressed the button {counter} times.</p>
 
   <h2>Learn Meteor!</h2>
