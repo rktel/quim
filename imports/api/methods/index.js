@@ -1,13 +1,16 @@
 import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
+import { Reports } from '../db/Reports';
 
-const Reports = new Mongo.Collection('reports');
+Meteor.publish('reports', function() {
+  return Reports.find({});
+});
+
 
 Meteor.methods({
   'reports.insert'(report_array) {
     for (const key in report_array) {
       const repo = Reports.insert(report_array[key]);
-      console.log('repor:',repo);
+      console.log('repor:',repo); // its id insert
     }
   }
 });
