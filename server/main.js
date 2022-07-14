@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import '../imports/api/methods/index.js';
+import '../imports/api/index.js';
 
 //const Names = new Mongo.Collection('names');
 
