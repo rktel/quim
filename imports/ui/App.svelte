@@ -12,7 +12,7 @@
     <div>
       <h1>{repo.imei}</h1>
       <p>{repo.dateAndTime}</p>
-      <p>{repo.longitude}</p>
+      <p>{repo.latitude}</p>
       <p>{repo.longitude}</p>
     </div>
   {/each}
