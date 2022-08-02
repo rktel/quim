@@ -4,7 +4,7 @@
   const handler = Meteor.subscribe("reports");
   let reports = [];
   $m: {
-    reports = Reports.find({}).fetch();
+    reports = Reports.find({}).sort({"dateAndTime":-1}).fetch();
   }
 </script>
 
@@ -31,7 +31,7 @@
         <th scope="col">FechaHora</th>
         <th scope="col">latitud</th>
         <th scope="col">Longitud</th>
-        <th scope="col">Kilometaje</th>
+        <th scope="col">Kilometraje</th>
       </tr>
     </thead>
     <tbody>
