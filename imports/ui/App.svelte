@@ -6,6 +6,25 @@
   $m: {
     reports = Reports.find({},{ sort: { dateAndTime: -1 } }).fetch();
   }
+  function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function formatDate(date) {
+  return (
+    [
+      padTo2Digits(date.getMonth() + 1),
+      padTo2Digits(date.getDate()),
+      date.getFullYear(),
+    ].join('/') +
+    ' ' +
+    [
+      padTo2Digits(date.getHours()),
+      padTo2Digits(date.getMinutes()),
+      padTo2Digits(date.getSeconds()),
+    ].join(':')
+  );
+}
 </script>
 
 <div>
@@ -37,7 +56,7 @@
     <tbody>
       {#each reports as repo (repo._id)}
       <tr>
-        <th scope="row">{repo.dateAndTime}</th>
+        <th scope="row">{formatDate(repo.dateAndTime)}</th>
         <td>{repo.latitude}</td>
         <td>{repo.longitude}</td>
         <td>{repo.odometer}</td>
