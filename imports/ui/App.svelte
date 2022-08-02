@@ -51,7 +51,8 @@
   <table class="table table-sm table-bordered">
     <thead>
       <tr>
-        <th scope="col">FechaHora</th>
+        <th scope="col">FechaHoraServer</th>
+        <th scope="col">FechaHoraGPS</th>
         <th scope="col">latitud</th>
         <th scope="col">Longitud</th>
         <th scope="col">Kilometraje</th>
@@ -60,7 +61,8 @@
     <tbody>
       {#each reports as repo (repo._id)}
         <tr>
-          <th scope="row">{formatDate(repo.dateAndTime)}</th>
+          <th scope="row">{formatDate(repo.serverTime)}</th>
+          <td>{formatDate(repo.dateAndTime)}</td>
           <td>{repo.latitude}</td>
           <td>{repo.longitude}</td>
           <td>{repo.odometer}</td>
