@@ -4,7 +4,7 @@
   const handler = Meteor.subscribe("reports");
   let reports = [];
   $m: {
-    reports = Reports.find({}).sort({"dateAndTime":-1}).fetch();
+    reports = Reports.find({},{ sort: { dateAndTime: -1 } }).fetch();
   }
 </script>
 
