@@ -4,27 +4,31 @@
   const handler = Meteor.subscribe("reports");
   let reports = [];
   $m: {
-    reports = Reports.find({},{ sort: { dateAndTime: -1 } }).fetch();
+    reports = Reports.find({}, { sort: { dateAndTime: -1 } }).fetch();
   }
   function padTo2Digits(num) {
-  return num.toString().padStart(2, '0');
-}
+    return num.toString().padStart(2, "0");
+  }
 
-function formatDate(date) {
-  return (
-    [
-      padTo2Digits(date.getMonth() + 1),
-      padTo2Digits(date.getDate()),
-      date.getFullYear(),
-    ].join('/') +
-    ' ' +
-    [
-      padTo2Digits(date.getHours()),
-      padTo2Digits(date.getMinutes()),
-      padTo2Digits(date.getSeconds()),
-    ].join(':')
-  );
-}
+  function formatDate(date) {
+    if (date) {
+      return (
+        [
+          padTo2Digits(date.getMonth() + 1),
+          padTo2Digits(date.getDate()),
+          date.getFullYear(),
+        ].join("/") +
+        " " +
+        [
+          padTo2Digits(date.getHours()),
+          padTo2Digits(date.getMinutes()),
+          padTo2Digits(date.getSeconds()),
+        ].join(":")
+      );
+    }else{
+      return undefined;
+    }
+  }
 </script>
 
 <div>
@@ -55,14 +59,13 @@ function formatDate(date) {
     </thead>
     <tbody>
       {#each reports as repo (repo._id)}
-      <tr>
-        <th scope="row">{formatDate(repo.dateAndTime)}</th>
-        <td>{repo.latitude}</td>
-        <td>{repo.longitude}</td>
-        <td>{repo.odometer}</td>
-      </tr>
+        <tr>
+          <th scope="row">{formatDate(repo.dateAndTime)}</th>
+          <td>{repo.latitude}</td>
+          <td>{repo.longitude}</td>
+          <td>{repo.odometer}</td>
+        </tr>
       {/each}
     </tbody>
   </table>
-
 </div>
