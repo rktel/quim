@@ -39,42 +39,8 @@
 
 <div>
   {#if user}
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid justify-content-between">
-        <!-- Left -->
-        <div class="d-flex">
-          <form class="d-flex input-group w-auto">
-            <input
-              type="search"
-              class="form-control form-control-sm rounded"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <span class="input-group-text border-0" id="search-addon">
-              <i class="fas fa-search" />
-            </span>
-          </form>
-        </div>
-        <!-- Left -->
+    <nav class="">
 
-        <!-- Right -->
-        <ul class="navbar-nav flex-row">
-          <li class="nav-item me-3 me-lg-1">
-            <a class="nav-link" href="#">
-               <strong class="d-none d-sm-block ms-1">{user.username}</strong>
-            </a>
-          </li>
-          <li class="nav-item me-3 me-lg-1">
-            <a class="nav-link" href="#" on:click={logout}>
-              <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
-            </a>
-          </li>
-
-        </ul>
-        <!-- Right -->
-
-      </div>
     </nav>
 
     <table class="table table-sm table-bordered">
