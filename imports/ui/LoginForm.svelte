@@ -12,11 +12,11 @@
     <form on:submit|preventDefault={handleSubmit}>
         <div class="m-t-10">
             <label for="username">Username</label>
-            <input type="text" id="username" name="Username" placeholder="Username" bind:value={username}>
+            <input type="text" id="username" name="username" placeholder="Username" bind:value={username}>
         </div>
         <div class="m-t-10">
             <label for="password">Password</label>
-            <input type="password" id="password" name="Password" placeholder="Password" bind:value={password}>
+            <input type="password" id="password" name="password" placeholder="Password" bind:value={password}>
         </div>
         <div class="m-t-10">
             <input class="btn success" type="submit" value="Ingresar">
