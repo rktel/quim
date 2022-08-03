@@ -55,9 +55,17 @@
         <tr>
           <th>FechaHoraServer</th>
           <th>FechaHoraGPS</th>
+          <th>Record</th>
           <th>latitud</th>
           <th>Longitud</th>
+          <th>Altitud</th>
+          <th>Velocidad</th>
+          <th>Rumbo</th>
+          <th>Satelites</th>
+          <th>FixGPS</th>
+          <th>HDOP</th>
           <th>Kilometraje</th>
+          <th>Voltaje_0</th>
         </tr>
       </thead>
       <tbody>
@@ -65,9 +73,17 @@
           <tr>
             <th>{formatDate(repo.serverTime)}</th>
             <td>{formatDate(repo.dateAndTime)}</td>
+            <td>{repo.numberOfRecord}</td>
             <td>{repo.latitude}</td>
             <td>{repo.longitude}</td>
+            <td>{repo.altitude}</td>
+            <td>{repo.speed}</td>
+            <td>{repo.direction}</td>
+            <td>{repo.satellites}</td>
+            <td>{repo.coordinatesCorrectness}</td>
+            <td>{repo.hdop}</td>
             <td>{repo.odometer}</td>
+            <td>{repo.inputVoltage0}</td>
           </tr>
         {/each}
       </tbody>
