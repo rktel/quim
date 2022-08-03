@@ -11,14 +11,14 @@
 <form on:submit|preventDefault={handleSubmit}>
     <!-- Email input -->
     <div class="form-outline mb-4">
+        <label class="form-label" htmlFor="username">Username</label>
       <input type="text" name="username" class="form-control" bind:value={username}/>
-      <label class="form-label" htmlFor="username">Username</label>
     </div>
   
     <!-- Password input -->
     <div class="form-outline mb-4">
+        <label class="form-label" htmlFor="password">Password</label>
       <input type="password" name="password" class="form-control" bind:value={password}/>
-      <label class="form-label" htmlFor="password">Password</label>
     </div>
   
     <!-- Submit button -->
