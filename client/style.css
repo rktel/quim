@@ -42,7 +42,7 @@ body{
 .d-flex{
   display: flex;
 }
-input[type=text] {
+input[type=text], input[type=password]{
   width: 100%;
   background-color: var(--dark-alt);
   border: none;
