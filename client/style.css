@@ -87,5 +87,5 @@ td, th {
   padding: 0.5rem;
 }
 tbody tr:nth-child(odd) {
-  background: #eee;
+  background: var(--dark-alt);
 }
