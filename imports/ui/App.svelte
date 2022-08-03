@@ -50,20 +50,20 @@
     </div>
   </nav>
 
-    <table class="table table-sm table-bordered">
+    <table>
       <thead>
         <tr>
-          <th scope="col">FechaHoraServer</th>
-          <th scope="col">FechaHoraGPS</th>
-          <th scope="col">latitud</th>
-          <th scope="col">Longitud</th>
-          <th scope="col">Kilometraje</th>
+          <th>FechaHoraServer</th>
+          <th>FechaHoraGPS</th>
+          <th>latitud</th>
+          <th>Longitud</th>
+          <th>Kilometraje</th>
         </tr>
       </thead>
       <tbody>
         {#each reports as repo (repo._id)}
           <tr>
-            <th scope="row">{formatDate(repo.serverTime)}</th>
+            <th>{formatDate(repo.serverTime)}</th>
             <td>{formatDate(repo.dateAndTime)}</td>
             <td>{repo.latitude}</td>
             <td>{repo.longitude}</td>
