@@ -16,7 +16,7 @@
         </div>
         <div class="m-t-10">
             <label for="password">Password</label>
-            <input type="text" id="password" name="Password" placeholder="Password" bind:value={password}>
+            <input type="password" id="password" name="Password" placeholder="Password" bind:value={password}>
         </div>
         <div class="m-t-10">
             <input class="btn success" type="submit" value="Ingresar">
