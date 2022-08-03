@@ -8,32 +8,19 @@
         Meteor.loginWithPassword(username, password);
     }
 </script>
-
-<form class="login-form" on:submit|preventDefault={handleSubmit}>
-    <div>
-        <label htmlFor="username">Username</label>
-
-        <input
-                type="text"
-                placeholder="Username"
-                name="username"
-                required
-                bind:value={username}
-        />
+<form on:submit|preventDefault={handleSubmit}>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="form2Example1" class="form-control" bind:value={username}/>
+      <label class="form-label" for="form2Example1">Username</label>
     </div>
-
-    <div>
-        <label htmlFor="password">Password</label>
-
-        <input
-                type="password"
-                placeholder="Password"
-                name="password"
-                required
-                bind:value={password}
-        />
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="form2Example2" class="form-control" bind:value={password}/>
+      <label class="form-label" for="form2Example2">Password</label>
     </div>
-    <div>
-        <button type="submit">Log In</button>
-    </div>
-</form>
+  
+    <!-- Submit button -->
+    <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+ </form>
