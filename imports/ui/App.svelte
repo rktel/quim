@@ -39,9 +39,16 @@
 
 <div>
   {#if user}
-    <nav class="">
-
-    </nav>
+  <nav class="nav">
+    <div class="d-flex">
+        <input type="text" name="imei" id="imei" placeholder="IMEI">
+        <button class="btn">Buscar</button>
+    </div>
+    <div class="d-flex">
+        <span class="span">{user.username}</span>
+        <button class="btn secondary" on:click={logout}>Salir</button>
+    </div>
+  </nav>
 
     <table class="table table-sm table-bordered">
       <thead>
