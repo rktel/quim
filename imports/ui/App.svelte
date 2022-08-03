@@ -1,11 +1,16 @@
 <script>
   import { Reports } from "../db/Reports.js";
   import { Meteor } from "meteor/meteor";
+  import LoginForm from "./LoginForm.svelte";
+
   const handler = Meteor.subscribe("reports");
   let reports = [];
+  let user = null;
   $m: {
+    user = Meteor.user();
     reports = Reports.find({}, { sort: { dateAndTime: -1 } }).fetch();
   }
+
   function padTo2Digits(num) {
     return num.toString().padStart(2, "0");
   }
@@ -25,49 +30,53 @@
           padTo2Digits(date.getSeconds()),
         ].join(":")
       );
-    }else{
+    } else {
       return undefined;
     }
   }
 </script>
 
 <div>
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <form class="d-flex input-group w-auto">
-        <input
-          type="search"
-          class="form-control form-control-sm rounded"
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="search-addon"
-        />
-        <span class="input-group-text border-0" id="search-addon">
-          <i class="fas fa-search" />
-        </span>
-      </form>
-    </div>
-  </nav>
-  <table class="table table-sm table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">FechaHoraServer</th>
-        <th scope="col">FechaHoraGPS</th>
-        <th scope="col">latitud</th>
-        <th scope="col">Longitud</th>
-        <th scope="col">Kilometraje</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each reports as repo (repo._id)}
+  {#if user}
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <form class="d-flex input-group w-auto">
+          <input
+            type="search"
+            class="form-control form-control-sm rounded"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+          <span class="input-group-text border-0" id="search-addon">
+            <i class="fas fa-search" />
+          </span>
+        </form>
+      </div>
+    </nav>
+    <table class="table table-sm table-bordered">
+      <thead>
         <tr>
-          <th scope="row">{formatDate(repo.serverTime)}</th>
-          <td>{formatDate(repo.dateAndTime)}</td>
-          <td>{repo.latitude}</td>
-          <td>{repo.longitude}</td>
-          <td>{repo.odometer}</td>
+          <th scope="col">FechaHoraServer</th>
+          <th scope="col">FechaHoraGPS</th>
+          <th scope="col">latitud</th>
+          <th scope="col">Longitud</th>
+          <th scope="col">Kilometraje</th>
         </tr>
-      {/each}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {#each reports as repo (repo._id)}
+          <tr>
+            <th scope="row">{formatDate(repo.serverTime)}</th>
+            <td>{formatDate(repo.dateAndTime)}</td>
+            <td>{repo.latitude}</td>
+            <td>{repo.longitude}</td>
+            <td>{repo.odometer}</td>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
+  {:else}
+    <LoginForm />
+  {/if}
 </div>
