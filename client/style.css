@@ -89,3 +89,29 @@ td, th {
 tbody tr:nth-child(odd) {
   background: var(--dark-alt);
 }
+
+.drawer{
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  background-color: var(--dark);
+  box-shadow: -7px 0px 7px -7px rgba(0,0,0,.2);
+}
+
+.drawer .bar{
+  position:absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  height: 42px;
+  background-color: var(--dark-alt);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
