@@ -8,7 +8,7 @@
   let reports = [];
   let deviceIMEI;
   const getReport = ()=>{
-      reports = Reports.find({imei: deviceIMEI}, { sort: { dateAndTime: -1 } }).fetch();
+      reports = Reports.find({imei: Number(deviceIMEI)}, { sort: { dateAndTime: -1 } }).fetch();
   }
   let user = null;
   $m: {
