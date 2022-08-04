@@ -82,8 +82,8 @@
         <div></div>
     </div>
   </div>
-  <div style="width:500px;overflow-x:scroll;height:calc(100%-42px)">
-    <table style="margin: 10px 20px; width:600px">
+  <div style="width:600px;overflow-x:scroll;height:calc(600px-42px)">
+    <table style="margin: 10px 20px;">
       <thead>
         <tr>
           <th>FechaHoraServer</th>
