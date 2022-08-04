@@ -47,11 +47,11 @@
   {#if user}
   <nav class="nav">
     <div class="d-flex">
-      <button class="btn dark-alt" style="cursor:default ;" title="Fecha inicio">
+      <button class="btn dark-alt c-default" title="Fecha inicio">
           <svg width="1.4em" height="1.4em" viewBox="0 0 24 24"><path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z" fill="currentColor"/></svg>
       </button >
       <input type="date" id="start" name="trip-start" value="2022-07-22">
-      <button class="btn dark-alt" style="cursor:default ;" title="Fecha fin">
+      <button class="btn dark-alt c-default" title="Fecha fin">
           <svg width="1.4em" height="1.4em" viewBox="0 0 24 24"><path d="M14.4,6H20V16H13L12.6,14H7V21H5V4H14L14.4,6M14,14H16V12H18V10H16V8H14V10L13,8V6H11V8H9V6H7V8H9V10H7V12H9V10H11V12H13V10L14,12V14M11,10V8H13V10H11M14,10H16V12H14V10Z" fill="currentColor"/></svg>
       </button>
       <input type="date" id="start" name="trip-end" value="2022-07-23">
@@ -66,7 +66,7 @@
     </button>
   </div>
     <div class="d-flex">
-        <button class="btn">{user.username}</button>
+        <button class="btn c-default" >{user.username}</button>
         <button class="btn" title="Cerrar sesión" on:click={logout}>
           <svg width="1.4em" height="1.4em" viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V9H5V5H19V19H5V15H3V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M10.08,15.58L11.5,17L16.5,12L11.5,7L10.08,8.41L12.67,11H3V13H12.67L10.08,15.58Z" fill="#c2185b"/></svg>
       </button>
