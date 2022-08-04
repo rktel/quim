@@ -100,39 +100,11 @@
           <th>HDOP</th>
           <th>Kilometraje</th>
           <th>Voltaje_0</th>
-          <th>FechaHoraServer</th>
-          <th>FechaHoraGPS</th>
-          <th>IMEI</th>
-          <th>Record</th>
-          <th>latitud</th>
-          <th>Longitud</th>
-          <th>Altitud</th>
-          <th>Velocidad</th>
-          <th>Rumbo</th>
-          <th>Satelites</th>
-          <th>FixGPS</th>
-          <th>HDOP</th>
-          <th>Kilometraje</th>
-          <th>Voltaje_0</th>
         </tr>
       </thead>
       <tbody>
         {#each reports as repo (repo._id)}
           <tr>
-            <th>{formatDate(repo.serverTime)}</th>
-            <td>{formatDate(repo.dateAndTime)}</td>
-            <td>{repo.imei}</td>
-            <td>{repo.numberOfRecord}</td>
-            <td>{repo.latitude}</td>
-            <td>{repo.longitude}</td>
-            <td>{repo.altitude}</td>
-            <td>{repo.speed}</td>
-            <td>{repo.direction}</td>
-            <td>{repo.satellites}</td>
-            <td>{repo.coordinatesCorrectness}</td>
-            <td>{repo.hdop}</td>
-            <td>{repo.odometer}</td>
-            <td>{repo.inputVoltage0}</td>
             <th>{formatDate(repo.serverTime)}</th>
             <td>{formatDate(repo.dateAndTime)}</td>
             <td>{repo.imei}</td>
