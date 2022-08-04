@@ -82,7 +82,8 @@
         <div></div>
     </div>
   </div>
-    <table style="margin: 10px 20px; overflow-x:scroll">
+  <div style="width:400px;overflow-x:scroll">
+    <table style="margin: 10px 20px; width:500px">
       <thead>
         <tr>
           <th>FechaHoraServer</th>
@@ -150,6 +151,7 @@
         {/each}
       </tbody>
     </table>
+  </div>
   {:else}
     <LoginForm />
   {/if}
