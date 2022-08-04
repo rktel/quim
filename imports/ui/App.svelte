@@ -8,9 +8,7 @@
   let reports = [];
   let deviceIMEI;
   const getReport = ()=>{
-    if(typeof deviceIMEI === 'number'){
       reports = Reports.find({imei: deviceIMEI}, { sort: { dateAndTime: -1 } }).fetch();
-    }
   }
   let user = null;
   $m: {
