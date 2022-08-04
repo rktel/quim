@@ -87,6 +87,7 @@
         <tr>
           <th>FechaHoraServer</th>
           <th>FechaHoraGPS</th>
+          <th>IMEI</th>
           <th>Record</th>
           <th>latitud</th>
           <th>Longitud</th>
@@ -105,6 +106,7 @@
           <tr>
             <th>{formatDate(repo.serverTime)}</th>
             <td>{formatDate(repo.dateAndTime)}</td>
+            <td>{repo.imei}</td>
             <td>{repo.numberOfRecord}</td>
             <td>{repo.latitude}</td>
             <td>{repo.longitude}</td>
