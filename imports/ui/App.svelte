@@ -5,15 +5,16 @@
 
   const handler = Meteor.subscribe("reports");
   const logout = () => Meteor.logout();
-  const getReport = ()=>{
-    alert(deviceIMEI);
-  }
   let reports = [];
   let deviceIMEI;
+  const getReport = ()=>{
+    if(typeof deviceIMEI === 'number'){
+      reports = Reports.find({imei: deviceIMEI}, { sort: { dateAndTime: -1 } }).fetch();
+    }
+  }
   let user = null;
   $m: {
     user = Meteor.user();
-    reports = Reports.find({}, { sort: { dateAndTime: -1 } }).fetch();
   }
 
   function padTo2Digits(num) {
