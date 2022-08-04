@@ -82,7 +82,7 @@
         <div></div>
     </div>
   </div>
-    <table style="margin: 10px 20px;">
+    <table style="margin: 10px 20px; overflow-x:scroll">
       <thead>
         <tr>
           <th>FechaHoraServer</th>
