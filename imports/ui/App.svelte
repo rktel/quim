@@ -75,6 +75,7 @@
       </button>
     </div>
   </nav>
+
   <div class="drawer" id="myDrawer">
     <div class="bar">
         <div>
@@ -85,8 +86,8 @@
         <div></div>
     </div>
   </div>
-  {#if reports.length > 0}
   <div class="table-container">
+    {#if reports.length > 0}
     <table style="margin: 10px 20px;">
       <thead>
         <tr>
@@ -127,8 +128,8 @@
         {/each}
       </tbody>
     </table>
+    {/if}
   </div>
-  {/if}
   
   {:else}
     <LoginForm />
