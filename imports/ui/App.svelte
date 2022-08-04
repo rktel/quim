@@ -85,6 +85,7 @@
         <div></div>
     </div>
   </div>
+  {#if reports.length > 0}
   <div class="table-container">
     <table style="margin: 10px 20px;">
       <thead>
@@ -127,6 +128,8 @@
       </tbody>
     </table>
   </div>
+  {/if}
+  
   {:else}
     <LoginForm />
   {/if}
