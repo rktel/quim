@@ -82,7 +82,7 @@
         <div></div>
     </div>
   </div>
-  <div style="overflow:auto;height:600px">
+  <div class="table-container">
     <table style="margin: 10px 20px;">
       <thead>
         <tr>
