@@ -61,7 +61,7 @@
       </button>
   </div>
   <div class="d-flex">
-    <button class="btn primary" title="Panel de comandos" onclick="openDrawer()">
+    <button class="btn primary" title="Abrir panel de comandos" on:click={openDrawer}>
         <svg width="1.4em" height="1.4em" viewBox="0 0 24 24"><path d="M17,16.47V7.39L11,11.93M2.22,9.19C1.92,8.87 1.91,8.37 2.2,8.04L3.4,6.93C3.6,6.75 4.09,6.67 4.45,6.93L7.87,9.54L15.8,2.29C16.12,1.97 16.67,1.84 17.3,2.17L21.3,4.08C21.66,4.29 22,4.62 22,5.23V18.73C22,19.13 21.71,19.56 21.4,19.73L17,21.83C16.68,21.96 16.08,21.84 15.87,21.63L7.85,14.33L4.45,16.93C4.07,17.19 3.6,17.12 3.4,16.93L2.2,15.83C1.88,15.5 1.92,14.96 2.25,14.63L5.25,11.93" fill="#00a8ff"/></svg>
     </button>
   </div>
@@ -75,7 +75,7 @@
   <div class="drawer" id="myDrawer">
     <div class="bar">
         <div>
-            <button class="btn" onclick="closeDrawer()" title="Cerrar panel de comandos">
+            <button class="btn" on:click={closeDrawer} title="Cerrar panel de comandos">
                 <svg width="1.4em" height="1.4em" viewBox="0 0 24 24"><path d="M19,3H16.3H7.7H5A2,2 0 0,0 3,5V7.7V16.4V19A2,2 0 0,0 5,21H7.7H16.4H19A2,2 0 0,0 21,19V16.3V7.7V5A2,2 0 0,0 19,3M15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4L13.4,12L17,15.6L15.6,17Z" fill="#c2185b"/></svg>
             </button>
         </div>
