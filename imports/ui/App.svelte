@@ -104,7 +104,7 @@
           <th>FixGPS</th>
           <th>HDOP</th>
           <th>Kilometraje</th>
-          <th>Voltaje_0</th>
+          <th>VoltajeInput_0</th>
         </tr>
       </thead>
       <tbody>

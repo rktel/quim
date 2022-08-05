@@ -41,7 +41,7 @@ body{
   display: flex;
 }
 .c-default{
-  cursor: default;
+  cursor: default !important;
 }
 input[type=text], input[type=password],input[type=date]{
   width: 100%;
