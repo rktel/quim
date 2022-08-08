@@ -17,7 +17,7 @@
     if (day.length < 2) 
         day = '0' + day;
 
-    dateString = [day, month, year].join('-');
+    dateString = [year, month, day].join('-');
 	})
 
   const handler = Meteor.subscribe("reports");
@@ -28,7 +28,7 @@
   let deviceIMEI;
   const getReport = ()=>{
     console.log("dateString: "+dateString);
-      reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: dateString }}, { sort: { dateAndTime: -1 } }).fetch();
+      reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: ISODate(dateString) }}, { sort: { dateAndTime: -1 } }).fetch();
   }
   let user = null;
   $m: {
