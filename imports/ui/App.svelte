@@ -50,14 +50,23 @@
   {#if user}
   <nav class="nav">
     <div class="d-flex">
-      <span class="btn dark-alt c-default" title="Fecha inicio">
+      <!-- <span class="btn dark-alt c-default" title="Fecha inicio">
           <svg width="1.4em" height="1.4em" viewBox="0 0 24 24"><path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z" fill="currentColor"/></svg>
       </span >
       <input type="date" id="start" name="trip-start" value="2022-07-22">
       <span class="btn dark-alt c-default" title="Fecha fin">
           <svg width="1.4em" height="1.4em" viewBox="0 0 24 24"><path d="M14.4,6H20V16H13L12.6,14H7V21H5V4H14L14.4,6M14,14H16V12H18V10H16V8H14V10L13,8V6H11V8H9V6H7V8H9V10H7V12H9V10H11V12H13V10L14,12V14M11,10V8H13V10H11M14,10H16V12H14V10Z" fill="currentColor"/></svg>
       </span>
-      <input type="date" id="start" name="trip-end" value="2022-07-23">
+      <input type="date" id="start" name="trip-end" value="2022-07-23"> -->
+      <details class="btn">
+        <summary>HOY</summary>
+      
+          <div>HOY</div>
+          <div>AYER</div>
+          <div>RANGO</div>
+      
+      </details>
+
 
       <input type="text" name="imei" id="imei" placeholder="IMEI" bind:value={deviceIMEI}>
       <button class="btn primary" title="Buscar dispositivo" on:click={getReport}>
