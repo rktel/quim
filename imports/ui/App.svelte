@@ -48,7 +48,7 @@
   const getReport = ()=>{
     switch (selectDate) {
       case 0:
-        console.log("Entro a hoy");
+        console.log("Entro a hoy", getToday());
         reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: getToday() }}, { sort: { dateAndTime: -1 } }).fetch();
         break;
     
