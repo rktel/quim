@@ -62,7 +62,7 @@
       </span>
       <input type="date" id="start" name="trip-end" value="2022-07-23"> -->
       <div class="dropdown">
-        <button onclick="myFunction()" class="btn">Dropdown</button>
+        <button on:click={myFunction} class="btn">Dropdown</button>
         <div id="myDropdown" class="dropdown-content">
           <a href="#home">Home</a>
           <a href="#about">About</a>
