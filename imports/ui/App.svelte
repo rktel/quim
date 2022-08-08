@@ -67,9 +67,9 @@
       <div class="dropdown">
         <button on:click={myFunction} class="btn">{dateReport[selectDate]}</button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="#home" on:click={selectDate === 0}>HOY</a>
-          <a href="#about" on:click={selectDate === 1}>AYER</a>
-          <a href="#contact" on:click={selectDate === 2}>RANGO</a>
+          <a href="#home" on:click={_ => selectDate = 0}>HOY</a>
+          <a href="#about" on:click={_ => selectDate = 1}>AYER</a>
+          <a href="#contact" on:click={_=> selectDate = 2}>RANGO</a>
         </div>
       </div>
 
