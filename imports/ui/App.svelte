@@ -46,8 +46,14 @@
   let reports = [];
   let deviceIMEI;
   const getReport = ()=>{
-    console.log("dateString: ", getToday(), getYesterday(), getTommorow());
-      reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: new Date(dateString) }}, { sort: { dateAndTime: -1 } }).fetch();
+    switch (selectDate) {
+      case 0:
+        reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: getToday() }}, { sort: { dateAndTime: -1 } }).fetch();
+        break;
+    
+      default:
+        break;
+    }
   }
   let user = null;
   $m: {
