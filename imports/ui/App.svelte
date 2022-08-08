@@ -17,7 +17,7 @@
     if (day.length < 2) 
         day = '0' + day;
 
-    dateString = [year, month, day].join('-');
+    dateString = [day, month, year].join('-');
 	})
 
   const handler = Meteor.subscribe("reports");
