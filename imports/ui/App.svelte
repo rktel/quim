@@ -50,6 +50,20 @@
   function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
+function drownAction(select){
+  switch(select){
+    case 0:
+    selectDate = 0;
+      break;
+    case 1:
+    selectDate = 1;
+      break;
+    case 2:
+    selectDate = 2;
+      break;
+  }
+  myFunction();
+}
 </script>
 
 <div>
@@ -67,9 +81,9 @@
       <div class="dropdown">
         <button on:click={myFunction} class="btn">{dateReport[selectDate]}</button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="#home" on:click={_ => selectDate = 0}>HOY</a>
-          <a href="#about" on:click={_ => selectDate = 1}>AYER</a>
-          <a href="#contact" on:click={_=> selectDate = 2}>RANGO</a>
+          <span on:click={_ => drownAction(0)}>HOY</span>
+          <span on:click={_ => drownAction(1)}>AYER</span>
+          <span on:click={_=> drownAction(2)}>RANGO</span>
         </div>
       </div>
 
