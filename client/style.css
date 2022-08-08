@@ -166,3 +166,7 @@ html,body{
 .dropdown span:hover {background-color: var(--dark-alt);}
 
 .show {display: block;}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
