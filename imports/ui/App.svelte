@@ -65,7 +65,7 @@
       </span>
       <input type="date" id="start" name="trip-end" value="2022-07-23"> -->
       <div class="dropdown">
-        <button on:click={myFunction} class="btn">dateReport[selectDate]</button>
+        <button on:click={myFunction} class="btn">{dateReport[selectDate]}</button>
         <div id="myDropdown" class="dropdown-content">
           <a href="#home" on:click={selectDate === 0}>HOY</a>
           <a href="#about" on:click={selectDate === 1}>AYER</a>
