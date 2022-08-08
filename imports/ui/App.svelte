@@ -35,6 +35,9 @@
   function getYesterday(){
     return setFormat(new Date(new Date().setDate(new Date().getDate() - 1)));
   }
+  function getTommorow(){
+    return setFormat(new Date(new Date().setDate(new Date().getDate() + 1)));
+  }
   function getRange(){}
   const handler = Meteor.subscribe("reports");
   const logout = () => Meteor.logout();
@@ -43,7 +46,7 @@
   let reports = [];
   let deviceIMEI;
   const getReport = ()=>{
-    console.log("dateString: ", getToday(), getYesterday());
+    console.log("dateString: ", getToday(), getYesterday(), getTommorow());
       reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: new Date(dateString) }}, { sort: { dateAndTime: -1 } }).fetch();
   }
   let user = null;
