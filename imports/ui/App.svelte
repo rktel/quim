@@ -5,6 +5,8 @@
 
   const handler = Meteor.subscribe("reports");
   const logout = () => Meteor.logout();
+  let dateReport = ["HOY","AYER","RANGO"];
+  let selectDate = 0;
   let reports = [];
   let deviceIMEI;
   const getReport = ()=>{
@@ -13,6 +15,7 @@
   let user = null;
   $m: {
     user = Meteor.user();
+    console.log(selectDate);
   }
 
   function padTo2Digits(num) {
@@ -62,11 +65,11 @@
       </span>
       <input type="date" id="start" name="trip-end" value="2022-07-23"> -->
       <div class="dropdown">
-        <button on:click={myFunction} class="btn">Dropdown</button>
+        <button on:click={myFunction} class="btn">dateReport[selectDate]</button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" on:click={selectDate === 0}>HOY</a>
+          <a href="#about" on:click={selectDate === 1}>AYER</a>
+          <a href="#contact" on:click={selectDate === 2}>RANGO</a>
         </div>
       </div>
 
