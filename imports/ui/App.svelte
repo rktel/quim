@@ -28,7 +28,7 @@
   let deviceIMEI;
   const getReport = ()=>{
     console.log("dateString: "+dateString);
-      reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: ISODate(dateString) }}, { sort: { dateAndTime: -1 } }).fetch();
+      reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: new Date(dateString) }}, { sort: { dateAndTime: -1 } }).fetch();
   }
   let user = null;
   $m: {
