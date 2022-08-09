@@ -1,5 +1,4 @@
 <script>
-  import { Reports } from "../db/Reports.js";
   import { Meteor } from "meteor/meteor";
   import LoginForm from "./LoginForm.svelte";
 
@@ -10,18 +9,19 @@
   let reports = [];
   let deviceIMEI;
   const getReport = ()=>{
-    Meteor.call('reports.getToday', deviceIMEI, (err, res)=>{
-      if(err){
-        console.log(err);
-      }else{
-        reports = res;
-      }
-    })
+    switch (selectDate) {
+      case 0:
+        Meteor.call('reports.getToday', deviceIMEI, (err, res)=>reports = res);
+        
+        break;
+    
+      default:
+        break;
+    }
   }
   let user = null;
   $m: {
     user = Meteor.user();
-    console.log(selectDate);
   }
 
   function padTo2Digits(num) {
