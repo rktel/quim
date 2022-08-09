@@ -30,7 +30,7 @@
     return [year, month, day].join('-')
   }
   function getToday(){
-    return setFormat(new Date());
+    return new Date(setFormat(new Date()));
   }
   function getYesterday(){
     return setFormat(new Date(new Date().setDate(new Date().getDate() - 1)));
