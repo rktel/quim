@@ -15,7 +15,7 @@ Meteor.methods({
   },'reports.getToday'(deviceIMEI){
     let today = new Date();
     today = today.toISOString().slice(0,10);
-    const reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: today }}, { sort: { dateAndTime: -1 } }).fetch();
+    const reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: new Date(today) }}, { sort: { dateAndTime: -1 } }).fetch();
     console.log(reports);
   }
 });
