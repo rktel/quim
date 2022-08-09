@@ -12,5 +12,10 @@ Meteor.methods({
       const repo = Reports.insert(report_array[key]);
       console.log('repor:',repo); // its id insert
     }
+  },'reports.getToday'(deviceIMEI){
+    let today = new Date();
+    today = today.toISOString().slice(0,10);
+    const reports = Reports.find({imei: Number(deviceIMEI), dateAndTime: { $gte: today }}, { sort: { dateAndTime: -1 } }).fetch();
+    console.log(reports);
   }
 });
