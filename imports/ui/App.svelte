@@ -46,7 +46,13 @@
   let reports = [];
   let deviceIMEI;
   const getReport = ()=>{
-    Meteor.call('reports.getToday', deviceIMEI)
+    Meteor.call('reports.getToday', deviceIMEI, (err, res)=>{
+      if(err){
+        console.log(err);
+      }else{
+        reports = res;
+      }
+    })
   }
   let user = null;
   $m: {
