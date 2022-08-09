@@ -50,7 +50,7 @@
       if(err){
         console.log(err);
       }else{
-        reports = res;
+        console.log(res);;
       }
     })
   }
