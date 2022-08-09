@@ -2,44 +2,8 @@
   import { Reports } from "../db/Reports.js";
   import { Meteor } from "meteor/meteor";
   import LoginForm from "./LoginForm.svelte";
-  import { onMount } from 'svelte';
-	let now = new Date(), month, day, year;
-	let dateString;
-	onMount(()=> {
-        month = '' + (now.getMonth() + 1),
-        day = '' + now.getDate(),
-        year = now.getFullYear();
 
-    if (month.length < 2) 
-        month = '0' + month;
-    if (day.length < 2) 
-        day = '0' + day;
 
-    dateString = [year, month, day].join('-');
-	})
-  function setFormat(fecha){
-    let month = '' + (fecha.getMonth() + 1);
-    let day = '' + fecha.getDate();
-    const year = fecha.getFullYear();
-
-    if (month.length < 2) 
-        month = '0' + month;
-    if (day.length < 2) 
-        day = '0' + day;
-
-    return [year, month, day].join('-')
-  }
-  function getToday(){
-    return new Date(setFormat(new Date()));
-  }
-  function getYesterday(){
-    return setFormat(new Date(new Date().setDate(new Date().getDate() - 1)));
-  }
-  function getTommorow(){
-    return setFormat(new Date(new Date().setDate(new Date().getDate() + 1)));
-  }
-  function getRange(){}
-  const handler = Meteor.subscribe("reports");
   const logout = () => Meteor.logout();
   let dateReport = ["HOY","AYER","RANGO"];
   let selectDate = 0;
